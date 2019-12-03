@@ -24,7 +24,7 @@ class ListNode {
         return $res;
     }
 
-    public static function toListNode($nums) {
+    public static function transform($nums) {
         $length = count($nums);
         $next = null;
         for ($i = $length - 1; $i >= 0; $i--) {
