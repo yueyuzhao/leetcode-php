@@ -13,7 +13,7 @@ class TreeNode
 
     public function insert($val)
     {
-        if (null === $val || $val == $this->val) {
+        if (null === $val) {
             return;
         }
         if ($val < $this->val) {
@@ -34,8 +34,9 @@ class TreeNode
     public static function transform($data)
     {
         $root = new TreeNode($data[0] ?? null);
-        foreach($data as $num) {
-            $root->insert($num);
+        $size = count($data);
+        for ($i = 1; $i < $size; $i++) {
+            $root->insert($data[$i]);
         }
         return $root;
     }
